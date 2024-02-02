@@ -82,3 +82,23 @@ for (let image of images) {
 }
 
 container.innerHTML = markup;
+
+container.addEventListener(('click'), (event) => {
+  event.preventDefault();
+  if (event.target === event.currentTarget) {
+    return;
+  }
+
+  const source = event.target.dataset.source;
+  const { original } = images.find((image) => image.original == source);
+  
+  basicLightbox
+    .create(`
+    <div class="modal">
+        <img src="${original}"> 
+        </div>`).show();
+});
+
+
+
+
