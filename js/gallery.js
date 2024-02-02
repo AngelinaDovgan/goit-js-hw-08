@@ -92,13 +92,20 @@ container.addEventListener(('click'), (event) => {
   const source = event.target.dataset.source;
   const { original } = images.find((image) => image.original == source);
   
-  basicLightbox
+  modalWind = basicLightbox
     .create(`
     <div class="modal">
         <img src="${original}"> 
-        </div>`).show();
+        </div>`)
+    modalWind.show();
 });
 
+document.addEventListener('keyup', ({ code }) => {
+  if (code !== 'Escape') {
+    return
+  }
+  modalWind.close();
+});
 
 
 
