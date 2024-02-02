@@ -61,6 +61,23 @@ description: 'Lighthouse Coast Sea',
 ];
 
 const container = document.querySelector("ul.gallery");
+// container.innerHTML = createImgMarkup(images);
+
+
+
+// function createImgMarkup(images){
+//   return images.map(({ preview, original, description }) => `<li class="gallery-item">
+//   <a class="gallery-link" href="${original}">
+//     <img
+//       class="gallery-image"
+//       src="${preview}"
+//       data-source="${original}"
+//       alt="${description}"
+//     />
+//   </a>
+// </li>`).join("");
+// }
+
 
 function createImgMarkup({preview, original, description}) {
    const markup = `<li class="gallery-item">
